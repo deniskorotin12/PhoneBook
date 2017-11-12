@@ -1,0 +1,60 @@
+    input[type=text] {
+        width: 30em;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 0.5em;
+    }
+    
+    #containerForRegistration {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        margin-top: 15em;
+    }
+    
+    #regForm {
+        margin-left: 15em;
+    }
+    
+    #regButton {
+        background-color: #4CAF50;
+        /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 3em;
+        border-radius: 5px;
+    }
+    
+    #GoBack {
+        margin: 1.5em;
+        width: 5em;
+        height: 2em;
+        background-color: #d3d3d3;
+        border-radius: 5px;
+        text-align: center;
+        padding-top: 1.0em;
+        vertical-align: center;
+        cursor: pointer;
+    }
+    
+    #GoBack:hover {
+        opacity: 0.7;
+        border: solid 1px black;
+    }
+    
+    #spanBack {
+        padding-top: 50em;
+    }
+    
+    #regButton:hover {
+        opacity: 0, 7;
+        border: solid 1px black;
+        cursor: pointer;
+    }

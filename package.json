@@ -1,0 +1,37 @@
+{
+    "name": "KorotinCode",
+    "description": "ITVDN Dev",
+    "version": "5.1.2",
+    "repository": "https://github.com/deniskorotin12/ITVDN-Ecma",
+    "main": "index.js",
+    "keywords": [
+        "test",
+        "expect",
+        "assertion"
+    ],
+    "engines": {
+        "node": ">=8.9.0"
+    },
+    "dependencies": {
+        "hoek": "5.x.x"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-preset-env": "^1.6.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "lab": "15.x.x",
+        "markdown-toc": "1.1.x",
+        "webpack": "^3.8.1",
+        "webpack-dev-server": "^2.9.4"
+    },
+    "scripts": {
+        "start": "webpack-dev-server --hot --inline",
+        "build": "webpack --config webpack.config.js",
+        "test-cov-html": "lab -L -r html -o coverage.html",
+        "toc": "node generate-api-toc.js",
+        "version": "npm run toc && git add API.md",
+        "watch": "webpack --watch"
+    },
+    "license": "BSD-3-Clause"
+}

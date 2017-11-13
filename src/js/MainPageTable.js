@@ -5,9 +5,15 @@ window.onload = function() {
 
 const Users = {
     ContactUsers: ["Korotin Denys", "Tverdohleb Arseniy", "Tverdohleb Yulia", "Kovalchuk Valeria", "Pupkin Poligraph", "Korotina Svetlana", "Korotin Sergey"]
-        // Phone: ["+380955587919","+380955587919","+380955587919"]
 };
 let setItemAtLocaleStorage = localStorage.setItem("Users", Users.ContactUsers);
+
+function test() {
+    for (let index = 0; index < 3; index++) {
+        Users.ContactUsers.push("DENISD");
+    }
+
+};
 
 function initTable() {
 
@@ -44,6 +50,23 @@ function hideBlock() {
     });
 };
 
-hideBlock();
+const Name = document.getElementById("regName");
+const Surname = document.getElementById("regSurname");
+
+
+// function pushFullName(name, surname) {
+//     const fullName = name + surname;
+//     return Users.ContactUsers.push(fullName)
+// }
+
+function AddContactButton() {
+    const getRegButton = document.getElementById("regButton");
+    getRegButton.addEventListener("click", function() {
+        return hideBlock();
+    });
+};
+
+AddContactButton();
+//hideBlock();
 addNewPerson();
 initTable();

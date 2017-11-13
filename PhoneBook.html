@@ -7,13 +7,34 @@
 </head>
 
 <body>
-    <h1>Phone Book by Korotin Denys</h1>
-    <div id="content">
-        <div class="addContact">
-            <!-- <form id="contactForm">
-                <button type="button" id="addContactButton" title="Add new Contact">+</button>
-            </form> -->
+    <div id="mainContainer">
+        <!-- <div id="GoBack">
+            <div>
+                <button type="button" id="BackButton" title="Go back">Go back</button>
+            </div>
+        </div> -->
+        <div id="containerForRegistration">
 
+            <i class="material-icons">highlight_off</i>
+            <dialog>
+                <form>
+                    <input type="text" id="regName" placeholder="Name">
+                    <br>
+                    <input type="text" id="regSurname" placeholder="Surname">
+                    <br>
+                    <input type="text" id="regPhone" placeholder="Phone Number">
+                    <br>
+
+                    <button type="button" id="regButton">Add contact</button>
+                </form>
+            </dialog>
+
+        </div>
+    </div>
+
+    <div id="content">
+        <h1>Phone Book by Korotin Denys</h1>
+        <div class="addContact">
         </div>
         <div class="Table_block">
             <table cellspacing="0">
@@ -21,7 +42,9 @@
                     <tr class="odd-row">
                         <th class="th-items">
                             <div>Contact</div>
-                            <div> <button type="button" id="addContactButton" title="Add new Contact">+</button></div>
+                            <div>
+                                <button type="button" id="addContactButton" title="Add new Contact">+</button>
+                            </div>
                         </th>
 
                     </tr>
@@ -31,7 +54,7 @@
         </div>
     </div>
 
-    <script src="/dist/bundle.js"></script>
+    <script src="/src/js/MainPageTable.js"></script>
 </body>
 
 </html>

@@ -13,7 +13,7 @@ module.exports = {
             use: {
                 loader: 'babel-loader',
                 options: {
-                    presets: ['env','stage-0'],
+                    presets: ['es2015','env','stage-2'],
                 },
             },
         }, ]

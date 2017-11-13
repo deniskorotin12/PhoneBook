@@ -6,21 +6,30 @@
 </head>
 
 <body>
-    <div id="GoBack">
-        <div><button type="button" id="BackButton" title="Go back">Go back</button></div>
-    </div>
-    <div id="containerForRegistration">
-        <div><img src="https://image.freepik.com/free-photo/horizon-texture-aged-scene-weather_1088-693.jpg" alt="" width="220em" height="220em"></div>
-        <div id="regForm">
-            <form>
-                <input type="text" id="regName" placeholder="Name"><br>
-                <input type="text" id="regSurname" placeholder="Surname"><br>
-                <input type="text" id="regPhone" placeholder="Phone Number"><br>
-                <button id="regButton">Add contact</button>
-            </form>
+    <div id="mainContainer">
+        <div id="GoBack">
+            <div>
+                <button type="button" id="BackButton" title="Go back">Go back</button>
+            </div>
+        </div>
+        <div id="containerForRegistration">
+            <div>
+                <img src="https://image.freepik.com/free-photo/horizon-texture-aged-scene-weather_1088-693.jpg" alt="" width="220em" height="220em">
+            </div>
+            <div id="regForm">
+                <form>
+                    <input type="text" id="regName" placeholder="Name">
+                    <br>
+                    <input type="text" id="regSurname" placeholder="Surname">
+                    <br>
+                    <input type="text" id="regPhone" placeholder="Phone Number">
+                    <br>
+                    <button type="button" id="regButton">Add contact</button>
+                </form>
+            </div>
         </div>
     </div>
-    <script src="/dist/bundle.js"></script>
+    <script src="/src/js/AddContact.js"></script>
 </body>
 
 </html>

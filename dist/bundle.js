@@ -81,10 +81,16 @@ __webpack_require__(2);
 "use strict";
 
 
+window.onload = function () {
+    var hideElement = document.getElementById("containerForRegistration");
+    hideElement.style.visibility = "hidden";
+};
+
 var Users = {
     ContactUsers: ["Korotin Denys", "Tverdohleb Arseniy", "Tverdohleb Yulia", "Kovalchuk Valeria", "Pupkin Poligraph", "Korotina Svetlana", "Korotin Sergey"]
+    // Phone: ["+380955587919","+380955587919","+380955587919"]
 };
-var setItemAtLocaleStorage = localStorage.setItem("Users", JSON.stringify(Users.ContactUsers));
+var setItemAtLocaleStorage = localStorage.setItem("Users", Users.ContactUsers);
 
 function initTable() {
 
@@ -106,7 +112,10 @@ function initTable() {
 function addNewPerson() {
     var addNewPerson = document.getElementById("addContactButton");
     addNewPerson.addEventListener("click", function () {
-        return window.open("http://localhost:8080/AddContact.html", "_self");
+        var hideElement = document.getElementById("containerForRegistration");
+        hideElement.style.visibility = "visible";
+        var dialog = document.querySelector('dialog');
+        dialog.show();
     });
 };
 
@@ -120,14 +129,21 @@ initTable();
 "use strict";
 
 
-function RegistrationPerson() {
+function GoBack() {
     var getRegButton = document.getElementById("BackButton");
     getRegButton.addEventListener("click", function () {
         return window.open("http://localhost:8080/PhoneBook.html", "_self");
     });
 };
+function AddContactButton() {
+    var getRegButton = document.getElementById("regButton");
+    getRegButton.addEventListener("click", function () {
+        return console.log(localStorage.getItem('Users'));
+    });
+};
 
-RegistrationPerson();
+AddContactButton();
+GoBack();
 
 /***/ })
 /******/ ]);

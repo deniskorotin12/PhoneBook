@@ -119,6 +119,15 @@ function addNewPerson() {
     });
 };
 
+function hideBlock() {
+    var closeDialog = document.getElementById("closeButton");
+    closeDialog.addEventListener("click", function () {
+        var hideElement = document.getElementById("containerForRegistration");
+        hideElement.style.visibility = "hidden";
+    });
+};
+
+hideBlock();
 addNewPerson();
 initTable();
 

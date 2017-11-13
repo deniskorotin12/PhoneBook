@@ -93,41 +93,54 @@ a {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.fa-times {
+    border: 1px solid black;
+    margin-left: 44em;
+    padding: 0.8em;
+    cursor: pointer;
+}
+
+.fa-times:hover {
+    background-color: gray;
+    opacity: 0.3;
+}
+
 .divTable {
     width: 70%;
 }
 
-dialog{
-    margin:40px auto 0px auto;
-    width:30%;
+dialog {
+    margin: 40px auto 0px auto;
+    width: 30%;
     height: 20%;
-    padding:2em;
+    padding: 2em;
     background-color: #fff;
-    border-radius:5px;
+    border-radius: 5px;
     box-shadow: 0px 0px 10px #c5c5c5;
     border: none;
 }
 
-#containerForRegistration{
-    width:100%;
+#containerForRegistration {
+    width: 100%;
     height: 2000px;
-    background-color: rgba(0,0,0,0.5);
-    overflow:hidden;
-    position:fixed;
-    top:0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
 }
 
 #th-items {
     display: flex;
     /* justify-content: space-around;
-    align-content: space-around; */
+align-content: space-around; */
     flex-direction: row;
     flex-wrap: nowrap;
 }
 
-form{
+form {
     margin: 8em;
 }
+
 #regButton {
     background-color: #4CAF50;
     /* Green */
@@ -246,5 +259,4 @@ tr:last-child td.first {
 tr:last-child td.last {
     -moz-border-radius-bottomright: 5px;
     -webkit-border-bottom-right-radius: 5px;
-    /* Saf3-4 */
 }

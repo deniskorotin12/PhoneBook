@@ -1,11 +1,11 @@
-window.onload = function () {
+window.onload = function() {
     let hideElement = document.getElementById("containerForRegistration");
     hideElement.style.visibility = "hidden";
 };
 
 const Users = {
     ContactUsers: ["Korotin Denys", "Tverdohleb Arseniy", "Tverdohleb Yulia", "Kovalchuk Valeria", "Pupkin Poligraph", "Korotina Svetlana", "Korotin Sergey"]
-    // Phone: ["+380955587919","+380955587919","+380955587919"]
+        // Phone: ["+380955587919","+380955587919","+380955587919"]
 };
 let setItemAtLocaleStorage = localStorage.setItem("Users", Users.ContactUsers);
 
@@ -28,7 +28,7 @@ function initTable() {
 
 function addNewPerson() {
     const addNewPerson = document.getElementById("addContactButton");
-    addNewPerson.addEventListener("click", function () {
+    addNewPerson.addEventListener("click", function() {
         let hideElement = document.getElementById("containerForRegistration");
         hideElement.style.visibility = "visible";
         const dialog = document.querySelector('dialog');
@@ -36,6 +36,14 @@ function addNewPerson() {
     });
 };
 
+function hideBlock() {
+    const closeDialog = document.getElementById("closeButton");
+    closeDialog.addEventListener("click", function() {
+        const hideElement = document.getElementById("containerForRegistration");
+        hideElement.style.visibility = "hidden";
+    });
+};
 
+hideBlock();
 addNewPerson();
 initTable();

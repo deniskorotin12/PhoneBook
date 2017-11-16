@@ -61,7 +61,7 @@ td {
 
 h1 {
     text-align: center;
-    font-size: 50px;
+    font-size: 4.2em;
     margin-top: 1em;
     margin-bottom: 1.2em;
 }
@@ -88,14 +88,13 @@ a {
     justify-content: left;
     margin: auto;
     width: 55%;
-    margin: 0 auto;
+    margin: 20px auto;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .fa-times {
     border: 1px solid black;
-    margin-left: 44em;
     padding: 0.8em;
     cursor: pointer;
 }
@@ -131,14 +130,19 @@ dialog {
 
 #th-items {
     display: flex;
-    /* justify-content: space-around;
-align-content: space-around; */
+    justify-content: space-between;
+    align-content: space-around;
     flex-direction: row;
     flex-wrap: nowrap;
+    margin: 0px;
+    padding: 1.2em;
 }
 
+
+
+
 form {
-    margin: 8em;
+    margin: 4em;
 }
 
 #regButton {
@@ -196,7 +200,8 @@ td {
 td:hover {
     font-size: 2.3em;
     cursor: pointer;
-    text-decoration: underline;
+    color:  black;
+    background: rgb(245, 245, 245);
 }
 
 th {
@@ -260,3 +265,5 @@ tr:last-child td.last {
     -moz-border-radius-bottomright: 5px;
     -webkit-border-bottom-right-radius: 5px;
 }
+
+

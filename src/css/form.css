@@ -16,30 +16,72 @@
 } */
 
 #addContactButton {
-    /* display: inline-block; */
-    width: 1.9em;
-    height: 1.9em;
-    line-height: 2em;
-    vertical-align: right;
+    display: block;
+    position: static;
+    left: 0;
+    top: 0;
+    width: 1.5em;
+    height: 1.5em;
+    padding-top: 3px;		
+    text-decoration: none;		
     text-align: center;
-    text-decoration: none;
-    color: #000;
-    outline: none;
-    border-radius: 10px;
-    box-shadow: 0 0 0 1px #ddd inset, 0 1px 1px #fff;
-    font-size: 0.7em;
-    padding-bottom: 1.8em;
-    cursor: pointer;
-    margin: auto;
+    font-size: 25px;		
+    text-shadow: 0 1px 0 rgba(255,255,255,.7);
+    background-color: rgb(255, 255, 255);
+    letter-spacing: -.065em;
+    font-family: "Hammersmith One", sans-serif;		
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+    box-shadow: 2px 2px 7px rgba(0,0,0,.2);
+    border-radius: 300px;
+    z-index: 1;
+    border: 1px solid rgb(77, 77, 77);
 }
 
 #addContactButton:hover {
-    border: 1px solid black;
+    border: 2px solid black;
     opacity: 0.7;
+    width: 1.7em;
+    height: 1.7em;
+    cursor: pointer;
+}
+
+#closeButton{
+    padding: 8px 10px;
+    border: 1px solid black;
+    border-radius: 8wpx;
+}
+
+#closeButton:hover{
+   cursor: pointer;
+   background-color: rgb(245, 245, 245);
+   padding: 12px 15px;
 }
 
 #addContactButton:focus {
     border: 1px solid rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.164);
     opacity: 0.7;
+}
+
+@-moz-keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
+
+@-webkit-keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
+
+@-o-keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
+
+@keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
 }

@@ -12,9 +12,9 @@
 
         <div id="containerForRegistration">
 
-
             <dialog>
-                <span id="closeButton"><i class="fa fa-times" aria-hidden="true"></i>
+                <span id="closeButton">Back</span>
+                <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
                 <form>
                     <input type="text" id="regName" placeholder="Name">
                     <br>
@@ -31,17 +31,16 @@
     </div>
 
     <div id="content">
-        <h1>Phone Book by Korotin Denys</h1>
+        <div><h1>Phone Book by Korotin Denys</h1></div>
         <div class="addContact">
         </div>
         <div class="Table_block">
-            <table cellspacing="0">
+            <table cellspacing="0" id="MainTable">
                 <tbody id="t_BodyItems">
                     <tr class="odd-row">
-                        <th class="th-items">
+                        <th id="th-items">
                             <div>Contact</div>
-                            <div>
-                                <button type="button" id="addContactButton" title="Add new Contact">+</button>
+                            <div><button type="button" id="addContactButton" title="Add new Contact">+</button>
                             </div>
                         </th>
 

@@ -1,11 +1,17 @@
+const hideElement = document.getElementById("containerForRegistration");
+const Users = {
+    ContactUsers: ["Korotin Denys", "Tverdohleb Arseniy", "Tverdohleb Yulia", "Kovalchuk Valeria", "Pupkin Poligraph", "Korotina Svetlana", "Korotin Sergey"]
+};
+const closeDialog = document.getElementById("closeButton");
+const newPersonButton = document.getElementById("addContactButton");
+
+
 window.onload = function() {
     let hideElement = document.getElementById("containerForRegistration");
     hideElement.style.visibility = "hidden";
 };
 
-const Users = {
-    ContactUsers: ["Korotin Denys", "Tverdohleb Arseniy", "Tverdohleb Yulia", "Kovalchuk Valeria", "Pupkin Poligraph", "Korotina Svetlana", "Korotin Sergey"]
-};
+
 let setItemAtLocaleStorage = localStorage.setItem("Users", Users.ContactUsers);
 
 function test() {
@@ -15,7 +21,7 @@ function test() {
 
 };
 
-function initTable() {
+let initTable = (function() {
 
     for (let prop in Users.ContactUsers) {
 
@@ -30,22 +36,19 @@ function initTable() {
         tBodyItems.appendChild(createTr);
         tBodyItems.appendChild(createTd);
     };
-};
+}());
 
-function addNewPerson() {
-    const addNewPerson = document.getElementById("addContactButton");
-    addNewPerson.addEventListener("click", function() {
-        let hideElement = document.getElementById("containerForRegistration");
+let addNewPerson = (function() {
+    
+    newPersonButton.addEventListener("click", function() {
         hideElement.style.visibility = "visible";
         const dialog = document.querySelector('dialog');
         dialog.show();
     });
-};
+}());
 
 function hideBlock() {
-    const closeDialog = document.getElementById("closeButton");
     closeDialog.addEventListener("click", function() {
-        const hideElement = document.getElementById("containerForRegistration");
         hideElement.style.visibility = "hidden";
     });
 };
@@ -62,11 +65,12 @@ const Surname = document.getElementById("regSurname");
 function AddContactButton() {
     const getRegButton = document.getElementById("regButton");
     getRegButton.addEventListener("click", function() {
-        return hideBlock();
+        return hideElement.style.visibility = "hidden";
     });
 };
 
+
 AddContactButton();
-//hideBlock();
+hideBlock();
 addNewPerson();
 initTable();

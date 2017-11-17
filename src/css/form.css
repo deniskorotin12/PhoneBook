@@ -41,8 +41,8 @@
 }
 
 #addContactButton:hover {
-    border: 2px solid black;
-    opacity: 0.7;
+    border: 2px solid rgb(165, 165, 165);
+    /* opacity: 0.7; */
     width: 1.7em;
     height: 1.7em;
     cursor: pointer;
@@ -51,7 +51,7 @@
 #closeButton{
     padding: 8px 10px;
     border: 1px solid black;
-    border-radius: 8wpx;
+    border-radius: 8px;
 }
 
 #closeButton:hover{
@@ -63,7 +63,7 @@
 #addContactButton:focus {
     border: 1px solid rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.164);
-    opacity: 0.7;
+ 
 }
 
 @-moz-keyframes rotate {

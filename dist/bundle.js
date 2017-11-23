@@ -83,49 +83,50 @@ __webpack_require__(2);
 
 var hideElement = document.getElementById("containerForRegistration");
 var Users = {
-    ContactUsers: ["Korotin Denys", "Tverdohleb Arseniy", "Tverdohleb Yulia", "Kovalchuk Valeria", "Pupkin Poligraph", "Korotina Svetlana", "Korotin Sergey"]
+    ContactUsers: []
 };
 var closeDialog = document.getElementById("closeButton");
 var newPersonButton = document.getElementById("addContactButton");
+var getItemLocaleStorage = localStorage.getItem("Users");
+var getRegButton = document.getElementById("regButton");
+var dialog = document.querySelector('dialog');
 
 window.onload = function () {
     var hideElement = document.getElementById("containerForRegistration");
     hideElement.style.visibility = "hidden";
 };
 
-var setItemAtLocaleStorage = localStorage.setItem("Users", Users.ContactUsers);
-
-function test() {
-    for (var index = 0; index < 3; index++) {
-        Users.ContactUsers.push("DENISD");
-    }
-};
-
 var initTable = function () {
+    if (localStorage.getItem("Users") != null) {
+        for (var prop in getItemLocaleStorage.split(",")) {
+            var createTd = document.createElement('td');
+            createTd.innerText = getItemLocaleStorage.split(",")[prop];
+            createTd.setAttribute("title", "Transfer to contact");
+            createTd.className = "tdCreate";
 
-    for (var prop in Users.ContactUsers) {
+            var createButton = document.createElement('button');
+            createButton.innerText = "Delete";
+            createButton.className = "deleteButton";
 
-        var createTd = document.createElement('td');
-        createTd.innerText = Users.ContactUsers[prop];
-        createTd.setAttribute("title", "Transfer to contact");
+            var createTr = document.createElement('tr');
 
-        var createTr = document.createElement('tr');
+            var tBodyItems = document.getElementById("t_BodyItems");
 
-        var tBodyItems = document.getElementById("t_BodyItems");
-
-        tBodyItems.appendChild(createTr);
-        tBodyItems.appendChild(createTd);
-    };
+            tBodyItems.appendChild(createTr);
+            tBodyItems.appendChild(createTd);
+            createTd.appendChild(createButton);
+        };
+    } else {
+        localStorage.setItem("Users", " ");
+    }
 }();
 
-var addNewPerson = function () {
-
+function addNewPerson() {
     newPersonButton.addEventListener("click", function () {
         hideElement.style.visibility = "visible";
-        var dialog = document.querySelector('dialog');
         dialog.show();
     });
-}();
+};
 
 function hideBlock() {
     closeDialog.addEventListener("click", function () {
@@ -133,72 +134,37 @@ function hideBlock() {
     });
 };
 
-var Name = document.getElementById("regName");
-var Surname = document.getElementById("regSurname");
+function pushFullName() {
+    var Name = document.getElementById("regName");
+    var Surname = document.getElementById("regSurname");
+    // if (Name.value || Surname.value == "") {
+    //     return alert("Enter correct data");
+    // } else {
+    var fullName = Name.value + " " + Surname.value;
+    return fullName;
+    // };
+};
 
-// function pushFullName(name, surname) {
-//     const fullName = name + surname;
-//     return Users.ContactUsers.push(fullName)
-// }
-
-
-function AddContactButton() {
-    var getRegButton = document.getElementById("regButton");
+var AddContactButton = function () {
     getRegButton.addEventListener("click", function () {
-        return Users.ContactUsers.push("fuck this police"); //hideElement.style.visibility = "hidden";
+        if (localStorage.getItem("Users")[0] == " ") {
+            Users.ContactUsers = localStorage.getItem("Users");
+            Users.ContactUsers = pushFullName();
+            localStorage.setItem("Users", Users.ContactUsers);
+            hideElement.style.visibility = "hidden";
+            location.reload();
+        } else {
+            Users.ContactUsers = localStorage.getItem("Users");
+            Users.ContactUsers += "," + pushFullName();
+            localStorage.setItem("Users", Users.ContactUsers);
+            hideElement.style.visibility = "hidden";
+            location.reload();
+        }
     });
-};
+}();
 
-var grid = document.getElementById('MainTable');
-
-grid.onclick = function (e) {
-    if (e.target.tagName != 'TH') return;
-
-    // Если TH -- сортируем
-    sortGrid(e.target.cellIndex, e.target.getAttribute('data-type'));
-};
-
-function sortGrid(colNum, type) {
-    var tbody = grid.getElementsByTagName('tbody')[0];
-
-    // Составить массив из TR
-    var rowsArray = [].slice.call(tbody.rows);
-
-    // определить функцию сравнения, в зависимости от типа
-    var compare;
-
-    switch (type) {
-        case 'number':
-            compare = function compare(rowA, rowB) {
-                return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;
-            };
-            break;
-        case 'string':
-            compare = function compare(rowA, rowB) {
-                return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML;
-            };
-            break;
-    }
-
-    // сортировать
-    rowsArray.sort(compare);
-
-    // Убрать tbody из большого DOM документа для лучшей производительности
-    grid.removeChild(tbody);
-
-    // добавить результат в нужном порядке в TBODY
-    // они автоматически будут убраны со старых мест и вставлены в правильном порядке
-    for (var i = 0; i < rowsArray.length; i++) {
-        tbody.appendChild(rowsArray[i]);
-    }
-
-    grid.appendChild(tbody);
-}
-
-AddContactButton();
 hideBlock();
-//addNewPerson();
-//initTable();
+addNewPerson();
 
 /***/ }),
 /* 2 */
